@@ -1,0 +1,585 @@
+.bumpy-char {
+  line-height: 2em;
+  position: relative;
+}
+//dots全屏切换按钮
+//.dots{
+//  width: 16px;
+//  position: fixed;
+//  top: 50%;
+//  transform: translateY(-50%);
+//  right: 50px;
+//  ul{
+//    li{
+//      float: left;
+//      span{
+//        float: left;
+//        width: 8px;
+//        height: 8px;
+//        border: 1px solid #000;
+//        border-radius: 50%;
+//        margin: 10px 0;
+//        cursor: pointer;
+//        transition: all 0.5s;
+//        &:hover{
+//          width: 16px;
+//          height: 8px;
+//          background-color: #000;
+//          border-radius: 0;
+//        }
+//      }
+//    }
+//  }
+//}
+
+//第一屏
+.first.current .mypho{
+  animation: moveright 2s forwards;
+}
+.first.current .words{
+  animation:moveup 2s forwards;
+}
+.first.current .coner-tl{
+  animation:length 2s forwards;
+}
+.first.current .coner-br{
+  animation:length 2s forwards;
+}
+.first{
+  position: relative;
+  overflow: hidden;
+  .mypho{
+    width: 150px;
+    height: 150px;
+    left: -160px;
+    top: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    img{
+      display: inline-block;
+      width:100%;
+      vertical-align: middle;
+      transition: all 1s;
+      &:hover{
+        transform:scale(1.2,1.2);
+      }
+    }
+  }
+  .words{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 40px;
+    position: absolute;
+    bottom: -110px;
+    left: 600px;
+    color: #000;
+  }
+  .coner-tl{
+    width: 0px;
+    height: 0px;
+    border: 1px solid #000000;
+    position: absolute;
+    left: 200px;
+    top: 70px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .coner-br{
+    width: 0px;
+    height: 0px;
+    border: 1px solid #000000;
+    position: absolute;
+    right: 200px;
+    bottom: 70px;
+    border-top: none;
+    border-left: none;
+  }
+}
+@keyframes moveright {
+  0%{
+    transform: translateX(0px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(770px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveup {
+  0%{
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(-250px);
+    opacity: 1;
+  }
+}
+
+@keyframes length {
+  0%{
+    width: 0px;
+    height:0px;
+  }
+  100%{
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+//第二屏
+.second.current .dog.d1{
+  animation: dog1 4s forwards linear;
+}
+.second.current .dog.d2{
+  animation: dog2 4s 0.5s forwards ease-in;
+}
+.second.current .dog.d3{
+  animation: dog3 4s 0.3s forwards ease-out;
+}
+.second.current .dog.d4{
+  animation: dog4 4s forwards;
+}
+.second.current .dog.d5{
+  animation: dog5 4s 0.5s forwards ease-in-out;
+}
+.second.current .dog.d6{
+  animation: dog6 4s 0.2s forwards;
+}
+.second.current .dog.d7{
+  animation: dog7 4s 0.1s forwards linear;
+}
+.second{
+  padding: 20px;
+  .skill{
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    .skill-box{
+      .skill-title{
+        padding-top: 10px;
+        span{
+          float: left;
+          width: 20px;
+          height: 20px;
+          padding: 2px;
+          padding-top: 4px;
+          &:hover b{
+            animation:changebc 0.5s forwards alternate;
+          }
+          &:hover b:nth-child(odd){
+            animation:changebd 0.5s forwards alternate;
+          }
+          b{
+            float: right;
+            width: 10px;
+            height: 0px;
+            border: 1px solid #000;
+            margin: 2px;
+            &:nth-child(odd){
+              width: 20px;
+              animation:changebc 0.5s forwards alternate;
+            }
+          }
+        }
+        p{
+          float: left;
+          font-size: 20px;
+          font-weight: bold;
+          margin-left: 5px;
+          color: #000;
+        }
+      }
+    }
+    .skill-process{
+      margin-top: 50px;
+      //border: 1px solid #000;
+      padding: 2px;
+      .pro-bar{
+        width: 800px;
+        //border: 1px solid #000;
+        height: 50px;
+        margin: 10px auto;
+        padding-top: 20px;;
+        p{
+          width: 150px;
+          float: left;
+          font-size: 20px;
+          color: #000;
+          text-align: right;
+          margin-top: 10px;
+        }
+        .bar-main{
+          position: relative;
+          margin-top: 15px;
+          float: left;
+          margin-left: 20px;
+          height: 30px;
+          .dog{
+            position: absolute;
+            left: -20px;
+            top: -28px;
+            width: 40px;
+            height: 40px;
+            img{
+              width: 100%;
+            }
+          }
+          .bar{
+            display: inline-block;
+            width: 600px;
+            height: 1px;
+            background-color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes round {
+  0%{
+    transform: rotate(0deg);
+
+  }
+  100%{
+    transform: rotate(360deg);
+
+
+  }
+}
+
+@keyframes changebc {
+  0%{
+    width: 0px;
+    transform:rotate(0deg);
+  }
+  100%{
+    width: 20px;
+    transform:rotate(180deg);
+  }
+}
+
+@keyframes changebd {
+  0%{
+    width: 20px;
+    transform:rotate(0deg);
+  }
+  100%{
+    width: 10px;
+    transform:rotate(-180deg);
+  }
+
+}
+
+@keyframes dog1 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(540px);
+  }
+}
+@keyframes dog2 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(490px);
+  }
+}
+@keyframes dog3 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(480px);
+  }
+}
+@keyframes dog4 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(500px);
+  }
+}
+@keyframes dog5 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(460px);
+  }
+}
+
+@keyframes dog6 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(520px);
+  }
+}
+
+@keyframes dog7 {
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(460px);
+  }
+}
+
+//第三屏
+.third{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  h3{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+    margin-right: 100px;
+    margin-top: 20px;
+
+  }
+  .start{
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #000;
+    left: 50px;
+    top: 50px;
+    text-align: center;
+    &::after{
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background-color: #fff;
+      left: -5px;
+      top: 29px;
+    }
+  }
+  .line-1{
+    width: 0px;
+    height: 1px;
+    border: 1px solid #000;
+    position: absolute;
+    left: 85px;
+    top: 88px;
+    transform: rotate(-90deg);
+    transform-origin:top;
+    &::before{
+      content: '';
+      width: 5px;
+      height: 5px;
+      background-color: #000;
+      border-radius: 50%;
+      position: absolute;
+      left: -2px;
+      top: -2px;
+    }
+  }
+  .start-in{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius:50%;
+    border: 2px solid #000;
+    position: absolute;
+    left: 65px;
+    top: 64px;
+    &::after{
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background-color: #fff;
+      left: -5px;
+      top: 14px;
+    }
+  }
+  .info-1{
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    right: -300px;
+    top: 85px;
+
+  }
+  .info-2{
+    width: 300px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    right: 678px;
+    top: 85px;
+    //right: 570px;
+    //top: 230px;
+    opacity: 0;
+  }
+  .info-3{
+    width: 300px;
+    height: 100px;
+    background-color: pink;
+    position: absolute;
+    //right: 445px;
+    //top: 380px;
+    transform: rotateX(0deg);
+    right: 570px;
+    top: 230px;
+    opacity: 0;
+  }
+  .info-1,
+  .info-2,
+  .info-3{
+    box-shadow: -10px -10px 10px 0px rgba(0,0,0,.5);
+  }
+}
+.third.current h3{
+  transform: rotateX(360deg);
+  transition:transform 1s linear;
+}
+.third.current .info-1{
+  transform: translate(678px);
+  transition: transform 1s;
+  animation: info1 1s forwards;
+}
+@keyframes info1 {
+  0%{
+    transform: translate(0px);
+  }
+  100%{
+    transform: translate(-978px);
+  }
+}
+.third.current .start{
+  animation: startM 2s 1s forwards;
+}
+.third.current .start-in{
+  animation: start-inM 2s 1s forwards;
+}
+.third.current .line-1{
+  animation: chang 1s 3s forwards;
+}
+.third.current .info-2{
+  animation: info-2M 1s 4s forwards;
+}
+.third.current .info-3{
+  animation: info-3M 1s 5s forwards;
+}
+@keyframes startM {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+}
+@keyframes start-inM {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-180deg);
+  }
+}
+@keyframes chang {
+  0%{
+    height: 0px;
+  }
+  100%{
+    height: 300px;
+  }
+}
+@keyframes info-2M {
+  0%{
+    right: 678px;
+    top: 85px;
+    opacity: 0;
+  }
+  100%{
+    right: 570px;
+    top: 230px;
+    opacity: 1;
+
+  }
+}
+@keyframes info-3M {
+  0%{
+    right: 570px;
+    top: 230px;
+    opacity: 0;
+  }
+  100%{
+    right: 445px;
+    top: 380px;
+    opacity: 1;
+
+  }
+}
+
+
+
+//第4屏
+.fourth{
+  .work{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    h3{
+      font-size: 50px;
+      height: 100px;
+      line-height: 100px;
+      font-weight: normal;
+
+    }
+  }
+
+}
+
+
+
+
+
+//第五屏
+.fifth{
+  .contactme{
+    width: 100%;
+    height: 190px;
+    background-color: #5D5D5D;
+    padding:0 150px;
+    padding-top: 10px;
+    div{
+      float: left;
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 50px 100px;
+      a{
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+  }
+}
+
